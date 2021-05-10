@@ -26,6 +26,7 @@ app.use(
 
 app.use(cors())
 app.use(compression())
+app.use(require('./app/routes'))
 app.listen(app.get('port'))
 
 module.exports = app
