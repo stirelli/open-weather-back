@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const compression = require('compression')
 const cors = require('cors')
 const app = express()
+const initMongo = require('./config/mongo')
 
 app.set('port', process.env.PORT || 3000)
 
@@ -28,5 +29,7 @@ app.use(cors())
 app.use(compression())
 app.use(require('./app/routes'))
 app.listen(app.get('port'))
+
+initMongo()
 
 module.exports = app
